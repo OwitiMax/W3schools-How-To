@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acccordion</title>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /* Style the buttons that are used to open and close the accordion panel */
+        .accordian{
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: .4s;
+        }
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        .active ,.accordian:hover{
+            background-color: #ccc;
+        }
+        /* Style the accordion panel. Note: hidden by default */
+        .hidecontent{
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow:hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <!--Accordions are useful when you want to toggle between hiding and showing large amount of content: used in FAQs  -->
+<button class="accordian">section 1</button>
+<div class="hidecontent">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, explicabo.</p>
+</div>
+<button class="accordian">senction 2</button>
+<div class="hidecontent">
+    <p>Lorem ipsum dolor sit amet.</p>
+</div>
+<button class="accordian">section 3</button>
+<div class="hidecontent">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur deleniti suscipit pariatur nemo labore consectetur est alias numquam placeat porro.</p>
+</div>
+<button class="accordian">section 4</button>
+<div class="hidecontent">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi explicabo maiores ex consectetur id voluptas.</p>
+</div>
+<button class="accordian">section 5</button>
+<div class="hidecontent">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos atque laborum iure.</p>
+</div>
+<script>
+    let accordian=document.getElementsByClassName("accordian")
+    for(let i=0;i<accordian.length;i++){
+        accordian[i].addEventListener("click",()=>{
+         /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    accordian[i].classList.toggle("active")
+      /* Toggle between hiding and showing the active panel */
+      var panel=accordian[i].nextElementSibling;
+      if(panel.style.display==="block"){
+        panel.style.display="none";
+      } else{
+        panel.style.display="block";
+      } 
+    })
+    }
+</script>
+</body>
+</html>

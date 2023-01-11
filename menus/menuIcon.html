@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Icon</title>
+    <style>
+        .main{
+            width: 40px;
+        }
+        .item1,.item2,.item3{
+            background-color: black;
+            height: 6px;
+            margin: 5px;
+            transition: .5s;
+        }
+        /* rotate  bar 1 */
+        .change .item1{
+            transform: translate(0,11px) rotate(-45deg);
+        }
+        /* fadeout bar 2 */
+        .change .item2{
+            opacity:0;
+        }
+        /*rotate last bar(bar3) */
+        .change .item3{
+            transform: translate(0,-11px) rotate(45deg);
+        }
+
+    </style>
+</head>
+<body> 
+    <!-- this entail the design of menu icom using divs and a funtionality have been added to the the ibonusing javascript  when it is clicked it executes a javascript function that a new class to it which chnge the dtyle of esch horizontal bars(divs) -->
+    <div class="main" id="change" onclick="Myfunction(this)">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+    </div>
+ <script>
+    //this javascript code help  animate the menu icon
+    function Myfunction(x){
+        x.classList.toggle("change")
+    }
+ </script>   
+</body>
+</html>

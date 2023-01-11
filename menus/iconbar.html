@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon bar</title>
+    <style>
+        *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+        .container1{
+            margin: 20px;
+            width:80px;
+            background-color: aqua;
+            border-radius: 7px;
+
+        }
+        #cont{
+            width: 80px;
+            display: block;
+            text-align: center;
+            padding: 10px;
+            
+           
+        }
+        #cont i,.cont2 i{
+            padding: 8px;
+            font-size: 25px;
+            color: white;
+            
+        }
+        .container2{
+            width: 263px;
+            background-color: aqua;
+            border-radius: 7.5px;
+            display: flex;
+            align-items: center;
+            justify-content:flex-start;
+            margin: 20px;
+
+            
+        }
+        .cont2{
+            /* display:inline-block;
+            text-align: center; */
+            padding: 10px;
+         }
+         .cont2 i{
+            padding: 10px;
+         }
+        .active1{
+            background-color: bisque;
+            border-radius: 7px 7px 0 0;
+        }
+        #active2{
+            background-color: bisque;
+            border-radius: 7px 0 0 7px;
+        }
+        #cont:hover,.cont2:hover{
+          background-color: bisque;
+          border-radius: 3px;
+          transition: all .4s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- this is an example of  icon bar design the icons have been imported using the famous font awesome this just displays the menu  -->
+    <div class="container1">
+        <div id="cont" class="active1"><i class="fa-solid fa-house"></i></div>
+        <div id="cont"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div id="cont"><i class="fa-regular fa-address-book"></i></div>
+        <div id="cont"><i class="fa-solid fa-download"></i></div>
+    </div>
+    <div class="container2">
+        <div class="cont2" id="active2"><i class="fa-solid fa-house"></i></div>
+        <div class="cont2"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div class="cont2"><i class="fa-regular fa-address-book"></i></div>
+        <div class="cont2"><i class="fa-solid fa-download"></i></div>
+    </div>
+ <script>
+    let cont=document.querySelector(".cont")
+    cont.addEventListener("click",()=>{
+        cont.classList.toggle("active1")
+    })
+ </script>   
+</body>
+</html>
